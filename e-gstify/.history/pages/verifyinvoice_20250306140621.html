@@ -913,45 +913,4 @@
                 // In a real application, you would do something like this:
                 /*
                 try {
-                    const response = await fetch('https://your-erp-api.com/gst/invoices', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            ...headers
-                        },
-                        body: JSON.stringify(requestData)
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        return data;
-                    } else {
-                        throw new Error('Failed to fetch data');
-                    }
-                } catch (error) {
-                    console.error('API Error:', error);
-                    return {
-                        success: false,
-                        message: 'Failed to fetch data'
-                    };
-                }
-                */
-            }
-        function validateClientId() {
-            const clientIdError = document.getElementById('clientIdError');
-
-            if (!clientId.value.trim()) {
-                clientIdError.style.display = 'block';
-                return false;
-            } else {
-                clientIdError.style.display = 'none';
-                return true;
-            }
-        }
-
-        // Add any other necessary functions here
-
-    });
-</script>
-</body> 
-</html> 
+                    const response = await fetch('https://your-erp-api.com/gst/invoices
