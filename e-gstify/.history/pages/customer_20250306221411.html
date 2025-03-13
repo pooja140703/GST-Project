@@ -34,31 +34,7 @@
         --card-bg: #ffffff;
         --border-color: #e5e7eb;
     }
-/* Style the chatbot button */
-.chatbot-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 120px;  /* Increased size for better focus */
-    height: 120px; /* Makes it a perfect circle */
-    background-color: #0084FF;
-    color: white;
-    border: none;
-    border-radius: 50%; /* Ensures circular shape */
-    cursor: pointer;
-    font-size: 24px; /* Bigger icon/text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-/* Hover effect */
-.chatbot-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
     * {
         box-sizing: border-box;
         margin: 0;
@@ -670,13 +646,16 @@
           <p class="loading-text">Retrieving invoice details from ERP system...</p>
       </div>
   
-      <button class="chatbot-button" onclick="openChatbot()">💬 TaxGenie</button>
+      <div id="chatbot-container"></div>
 
-    <script>
-        function openChatbot() {
-            window.open("https://taxgenie.zapier.app/", "_blank", "width=400,height=600");
-        }
-    </script>
+      <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              const chatbot = document.createElement("zapier-interfaces-chatbot-embed");
+              chatbot.setAttribute("is-popup", "true");
+              chatbot.setAttribute("chatbot-id", "cm7xgerjp000u10yjkxkjkxz0");
+              document.getElementById("chatbot-container").appendChild(chatbot);
+          });
+      </script>
       <footer class="footer py-4  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -1141,11 +1120,6 @@
     // Add any other necessary functions here
 
 });
-
-function toggleChatbot() {
-    var chatbot = document.getElementById("chatbotContainer");
-    chatbot.style.display = (chatbot.style.display === "flex") ? "none" : "flex";
-}
 </script>
 
 </body>

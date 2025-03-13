@@ -665,16 +665,22 @@
           </div>
       </div>
   
-      <div class="loading-overlay" id="loadingOverlay">
-          <div class="spinner"></div>
-          <p class="loading-text">Retrieving invoice details from ERP system...</p>
-      </div>
-  
-      <button class="chatbot-button" onclick="openChatbot()">💬 TaxGenie</button>
+       <!-- Chatbot Button -->
+    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
+
+    <!-- Chatbot Popup -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            Chat with Us
+            <button class="close-chatbot" onclick="toggleChatbot()">✖</button>
+        </div>
+        <iframe class="chatbot-iframe" src="https://taxgenie.zapier.app/"></iframe>
+    </div>
 
     <script>
         function openChatbot() {
-            window.open("https://taxgenie.zapier.app/", "_blank", "width=400,height=600");
+               var chatbot = document.getElementById("chatbotContainer");
+    chatbot.style.display = (chatbot.style.display === "flex") ? "none" : "flex";
         }
     </script>
       <footer class="footer py-4  ">
@@ -1142,10 +1148,7 @@
 
 });
 
-function toggleChatbot() {
-    var chatbot = document.getElementById("chatbotContainer");
-    chatbot.style.display = (chatbot.style.display === "flex") ? "none" : "flex";
-}
+
 </script>
 
 </body>
